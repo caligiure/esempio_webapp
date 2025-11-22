@@ -54,39 +54,51 @@ Il frontend è l'interfaccia utente. È ciò che l'utente vede e con cui interag
 
 
 
-Walkthrough: Esecuzione e Verifica
+# Walkthrough: Esecuzione e Verifica
 Segui questa guida per avviare e verificare la tua applicazione.
 
 1. Prerequisiti
-Assicurati di aver installato:
-    Java JDK 17+
-    Maven (opzionale se usi il wrapper, ma consigliato)
-    Node.js LTS
-    Angular CLI (npm install -g @angular/cli)
+
+    Assicurati di aver installato:
+    - Java JDK 17+
+    - Maven (opzionale se usi il wrapper, ma consigliato)
+    - Node.js LTS
+    - Angular CLI (npm install -g @angular/cli)
+
 2. Avvio del Backend
-    Apri un terminale in esempio_webapp\backend.
-    Esegui il comando:
+
+    - Apri un terminale in esempio_webapp\backend.
+    - Esegui il comando:
     mvn spring-boot:run
     (Se non hai maven installato globalmente ma hai il wrapper, usa ./mvnw spring-boot:run su Linux/Mac o mvnw spring-boot:run su Windows).
-    Attendi che appaia la scritta "Started DemoApplication". Il server è attivo su localhost:8080.
+    - Attendi che appaia la scritta "Started DemoApplication". Il server è attivo su localhost:8080.
+
 3. Setup e Avvio del Frontend
-Segui le istruzioni in esempio_webapp\frontend-sources\istruzioni_frontend.md per creare il progetto e copiare i file.
-Una volta avviato con ng serve, apri il browser su http://localhost:4200.
+
+    - Segui le istruzioni in esempio_webapp\frontend-sources\istruzioni_frontend.md per creare il progetto e copiare i file.
+    - Una volta avviato con ng serve, apri il browser su http://localhost:4200.
+
 4. Verifica Manuale
+
     Esegui questi test per confermare il funzionamento:
 
-    Test 1: Visualizzazione Lista Vuota
-        Azione: Carica la pagina.
-        Risultato Atteso: Vedi il titolo "To-Do List" e nessun task.
-    Test 2: Aggiunta Task
-        Azione: Scrivi "Imparare Spring" nell'input e premi Invio o "Aggiungi".
-        Risultato Atteso: Il task appare nella lista. Se ricarichi la pagina, il task deve rimanere (perché salvato nel DB H2 in memoria).
-    Test 3: Completamento Task
-        Azione: Clicca sul testo del task.
-        Risultato Atteso: Il testo viene barrato (stile "completed").
-    Test 4: Eliminazione Task
-        Azione: Clicca sul pulsante "Elimina" rosso.
-        Risultato Atteso: Il task scompare dalla lista.
+    - Test 1: Visualizzazione Lista Vuota
+        - Azione: Carica la pagina.
+        - Risultato Atteso: Vedi il titolo "To-Do List" e nessun task.
+
+    - Test 2: Aggiunta Task
+        - Azione: Scrivi "Imparare Spring" nell'input e premi Invio o "Aggiungi".
+        - Risultato Atteso: Il task appare nella lista. Se ricarichi la pagina, il task deve rimanere (perché salvato nel DB H2 in memoria).
+
+    - Test 3: Completamento Task
+        - Azione: Clicca sul testo del task.
+        - Risultato Atteso: Il testo viene barrato (stile "completed").
+
+    - Test 4: Eliminazione Task
+        - Azione: Clicca sul pulsante "Elimina" rosso.
+        - Risultato Atteso: Il task scompare dalla lista.
+
     Risoluzione Problemi Comuni
-        Errore CORS: Se vedi errori in console browser riguardo CORS, verifica che nel TaskController.java ci sia l'annotazione @CrossOrigin(origins = "http://localhost:4200").
-        Backend non parte: Verifica che la porta 8080 non sia occupata.
+
+    - Errore CORS: Se vedi errori in console browser riguardo CORS, verifica che nel TaskController.java ci sia l'annotazione @CrossOrigin(origins = "http://localhost:4200").
+    - Backend non parte: Verifica che la porta 8080 non sia occupata.
